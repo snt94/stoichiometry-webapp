@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="assets/virus-svgrepo-com.svg">
+    <title>Estequiometria</title>
+</head>
+
+<body>
+    <header>
+        <h1>Bem-vindo ao site de Estequiometria!</h1>
+        <p>O intuito deste site é ajudar os estudantes a realizarem ou verificarem equações de elementos da tabela
+            periódica.</p>
+    </header>
+    <h2>Informações relevantes</h2>
+    <section class="tabelaPeriodica">
+        <figure>
+            <img src="assets/tabela_periodica.png" alt="Tabela Periódica">
+            <figcaption>Fonte: Toda Matéria</figcaption>
+        </figure>
+        <article>
+            <h3>Como funciona a tabela periódica?</h3>
+            <p>A Tabela Periódica é um modelo que agrupa todos os elementos químicos conhecidos e suas propriedades.
+                <br>Eles estão organizados em ordem crescente de número atômico (número de prótons).<br>Cada quadrado
+                especifica o nome do elemento químico, seu símbolo e seu número atômico.
+            </p>
+        </article>
+    </section>
+    <section>
+        <form id="elementosFormulario">
+            <!--action="https://httpbin.org/get" method="get"-->
+            <p>
+                <label for="elemento1">Selecione um elemento:</label>
+                <select name="elemento1" id="elemento1">
+                    <option value="H">Hidrogênio</option>
+                    <option value="O">Oxigênio</option>
+                </select>
+            </p>
+            <p>
+                <label for="elemento2">Selecione um segunndo elemento:</label>
+                <select name="elemento2" id="elemento2">
+                    <option value="H">Hidrogênio</option>
+                    <option value="O">Oxigênio</option>
+                </select>
+            </p>
+            <input type="submit" value="Enviar">
+            <p id="resultado"></p>
+            <p id="equacao"></p>
+        </form>
+    </section>
+    <footer>
+        <ul>
+            <li>Desenvolvido por Eduardo Luís</li>
+            <li>Celular: &lpar;11&rpar;&nbsp;98715-8230</li>
+            <li>Estudante de Engenharia da Computação</li>
+        </ul>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>
