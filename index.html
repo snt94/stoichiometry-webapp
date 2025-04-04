@@ -15,13 +15,20 @@
         <p>O intuito deste site é ajudar os estudantes a realizarem ou verificarem equações de elementos da tabela
             periódica.</p>
     </header>
+    <nav>
+        <ul>
+            <li><a href="#tabPeriodica">Como funciona a tabela periódica?</a></li>
+            <li><a href="#equacaoFormulario">Monte sua equação</a></li>
+            <li><a href=""></a></li>
+        </ul>
+    </nav>
     <h2>Informações relevantes</h2>
     <section class="tabelaPeriodica">
         <figure>
             <img src="assets/tabela_periodica.png" alt="Tabela Periódica">
             <figcaption>Fonte: Toda Matéria</figcaption>
         </figure>
-        <article>
+        <article id="tabPeriodica">
             <h3>Como funciona a tabela periódica?</h3>
             <p>A Tabela Periódica é um modelo que agrupa todos os elementos químicos conhecidos e suas propriedades.
                 <br>Eles estão organizados em ordem crescente de número atômico (número de prótons).<br>Cada quadrado
@@ -29,9 +36,9 @@
             </p>
         </article>
     </section>
-    <section>
+    <!-- <section>
         <form id="elementosFormulario">
-            <!--action="https://httpbin.org/get" method="get"-->
+            action="https://httpbin.org/get" method="get"
             <p>
                 <label for="elemento1">Selecione um elemento:</label>
                 <select name="elemento1" id="elemento1">
@@ -49,6 +56,16 @@
             <input type="submit" value="Enviar">
             <p id="resultado"></p>
             <p id="equacao"></p>
+        </form>
+    </section> -->
+    <section>
+        <form class="eqForm" id="equacaoFormulario">
+            <p>
+                <label for="equacao">Digite a equação química:</label>
+                <input type="text" id="equacao" name="equacao" placeholder="Exemplo: H2 + O2 -> H2O">
+            </p>
+            <input type="submit" value="Enviar">
+            <p id="resultado"></p>
         </form>
     </section>
     <footer>
