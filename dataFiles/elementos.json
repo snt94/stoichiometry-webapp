@@ -1,10 +1,54 @@
 {
     "elementos": [
-        {
-            "nomeElemento": "Oxigênio",
-            "mAtomica": "16",
-            "nAtomos": "2",
-            "mMolar": "32"
-        }
+      {
+        "nomeElem": "Hidrogênio",
+        "simbolo": "H",
+        "mAtomica": 1.008
+      },
+      {
+        "nomeElem": "Oxigênio",
+        "simbolo": "O",
+        "mAtomica": 16.00
+      },
+      {
+        "nomeElem": "Carbono",
+        "simbolo": "C",
+        "mAtomica": 12.01
+      },
+      {
+        "nomeElem": "Nitrogênio",
+        "simbolo": "N",
+        "mAtomica": 14.01
+      },
+      {
+        "nomeElem": "Cloro",
+        "simbolo": "Cl",
+        "mAtomica": 35.45
+      },
+      {
+        "nomeElem": "Sódio",
+        "simbolo": "Na",
+        "mAtomica": 22.99
+      },
+      {
+        "nomeElem": "Enxofre",
+        "simbolo": "S",
+        "mAtomica": 32.07
+      },
+      {
+        "nomeElem": "Cálcio",
+        "simbolo": "Ca",
+        "mAtomica": 40.08
+      },
+      {
+        "nomeElem": "Fósforo",
+        "simbolo": "P",
+        "mAtomica": 30.97
+      },
+      {
+        "nomeElem": "Magnésio",
+        "simbolo": "Mg",
+        "mAtomica": 24.31
+      }
     ]
-}
+  }

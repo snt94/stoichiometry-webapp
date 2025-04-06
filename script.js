@@ -1,53 +1,49 @@
-// Função para buscar os elementos do JSON
-async function getElementos() {
-    try {
-        const response = await fetch('dataFiles/elementos.json');
-        if (!response.ok) {
-            throw new Error('Erro ao carregar o JSON');
-        }
-        const data = await response.json();
-        return data.elementos; // Retorna a lista de elementos
-    } catch (error) {
-        console.error('Erro ao carregar o JSON:', error);
-        return null;
-    }
+function carregarJSON() {
+    return fetch('dataFiles/elementos.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Erro ao carregar o JSON');
+            }
+            return response.json();
+        })
+        .then(data => data.elementos)
+        .catch(error => {
+            console.error('Erro ao carregar os elementos:', error);
+            return [];
+        });
 }
 
-document.getElementById("equacaoFormulario").addEventListener("submit", async function (event) {
-    event.preventDefault(); // Evita o recarregamento da página
+document.getElementById('equacaoFormulario').addEventListener('submit', function (e) {
+    e.preventDefault();
 
-    const equacao = document.getElementById("equacao").value; // Captura a equação digitada
-    const elementos = await getElementos(); // Obtém os dados do JSON
+    const formula = document.getElementById('equacao').value.trim().replace(/\s+/g, '');
+    const resultadoEl = document.getElementById('resultado');
 
-    if (!elementos) {
-        document.getElementById("resultado").textContent = "Erro ao carregar os dados.";
-        return;
-    }
+    carregarJSON().then(elementos => {
+        const regex = /(\d*)\s*([A-Z][a-z]?)(\d*)/g;
+        let match;
+        let massaTotal = 0;
+        let detalhes = [];
 
-    const oxigenio = elementos.find(el => el.nomeElemento === "Oxigênio");
+        while ((match = regex.exec(formula)) !== null) {
+            let coefMol = parseInt(match[1]) || 1; // número de moléculas (à esquerda)
+            let simbolo = match[2].charAt(0).toUpperCase() + match[2].slice(1).toLowerCase(); // normaliza maiúscula/minúscula
+            let qtdAtomos = parseInt(match[3]) || 1; // número de átomos (à direita)
 
-    // Verifica se a equação contém oxigênio (O, O2, O3, etc.)
-    const match = equacao.match(/O(\d*)/g); // Encontra todas as ocorrências de "O", "O2", "O3", etc.
+            const elemento = elementos.find(el => el.simbolo === simbolo);
+            console.log(match)
+            if (elemento) {
+                const massa = elemento.mAtomica * qtdAtomos * coefMol;
+                massaTotal += massa;
+                detalhes.push(`${coefMol} × ${qtdAtomos} × ${elemento.simbolo} (${elemento.mAtomica} g/mol) = ${massa.toFixed(2)} g/mol`);
+            } else {
+                detalhes.push(`Elemento "${simbolo}" não encontrado no banco de dados.`);
+            }
+        }
 
-    if (oxigenio && match) {
-        let totalOxigenios = 0;
-
-        // Percorre todas as ocorrências encontradas na equação
-        match.forEach(m => {
-            let qtd = m.match(/\d+/); // Obtém o número depois do "O", se existir
-            totalOxigenios += qtd ? parseInt(qtd[0]) : 1; // Se não tiver número, assume 1 (exemplo: "O" → 1)
-        });
-
-        const massaMolarCorrigida = totalOxigenios * parseFloat(oxigenio.mAtomica);
-
-        document.getElementById("resultado").innerHTML = `
-            <strong>Nome:</strong> ${oxigenio.nomeElemento} <br>
-            <strong>Massa Atômica:</strong> ${oxigenio.mAtomica} <br>
-            <strong>Número de Átomos:</strong> ${totalOxigenios} <br>
-            <strong>Massa Molar Ajustada:</strong> ${massaMolarCorrigida}
+        resultadoEl.innerHTML = `
+            <strong>Massa Molar Total:</strong> ${massaTotal.toFixed(2)} g/mol<br>
+            <strong>Detalhes:</strong><br>${detalhes.join('<br>')}
         `;
-    } else {
-        document.getElementById("resultado").textContent = "Oxigênio não encontrado na equação.";
-    }
+    });
 });
-
