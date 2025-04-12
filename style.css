@@ -1,30 +1,75 @@
 * {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #111D13;
+    font-family: "Baloo 2", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
 }
 
+/*Configurações gerais de Margem, Padding, Display, Justificar conteúdos e etc.*/
 header {
-    border: 2px solid white;
-    display: block;
-    text-align: left;
+    padding-top: 5rem;
+    padding-left: 5rem;
+    padding-bottom: 5rem;
+    display: flex;
+    justify-content: space-between;
+    border: 2px solid rgba(164, 61, 61, 0);
+}
+
+.imageHeader {
+    text-align: right;
+    border: 2px solid rgba(143, 127, 127, 0);
 }
 
 .tabelaPeriodica {
-    border: 2px solid white;
+    margin: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background-color: #3D3D6D;
     display: block;
     justify-content: center;
     text-align: center;
+
 }
+
 body {
+    margin: auto;
+    border: 2px solid rgba(255, 255, 255, 0);
+    background-color: #111D13;
+}
+
+h1 {
     margin: auto;
 }
 
-h1, h2 {
-    color: #15B561
+
+
+/*tamanho das fontes*/
+
+figcaption {
+    font-size: 12px;
 }
 
-h3 {
+.sectionHeader p {
+    font-size: 24px;
+}
+
+nav li {
+    font-size: 24px;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+/*cores*/
+h1 {
+    color: #15B561;
+
+}
+
+h2 {
     color: #FFFD86;
+
 }
 
 .pPeriodica {
@@ -36,16 +81,16 @@ li {
     list-style: none;
 }
 
+p,
+li,
 figcaption {
-    font-size: 10px;
-}
-p, li, figcaption {
-    color: #A1CCA5
+    color: #A1CCA5;
 }
 
 a {
     color: #15B561;
 }
+
 a:hover {
     color: #A1CCA5;
 }
