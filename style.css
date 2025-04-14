@@ -5,43 +5,56 @@
     font-style: normal;
 }
 
-/*Configurações gerais de Margem, Padding, Display, Justificar conteúdos e etc.*/
-header {
-    padding-top: 5rem;
-    padding-left: 5rem;
-    padding-bottom: 5rem;
-    display: flex;
-    justify-content: space-between;
-    border: 2px solid rgba(164, 61, 61, 0);
-}
-
-.imageHeader {
-    text-align: right;
-    border: 2px solid rgba(143, 127, 127, 0);
-}
-
-.tabelaPeriodica {
-    margin: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    background-color: #3D3D6D;
-    display: block;
-    justify-content: center;
-    text-align: center;
-
-}
-
 body {
-    margin: auto;
+    padding: 0;
+    margin: 0px;
     border: 2px solid rgba(255, 255, 255, 0);
     background-color: #111D13;
 }
+header {
+    background-color: #111D13;
+}
 
-h1 {
-    margin: auto;
+/*Configurações gerais de Margem, Padding, Display, Justificar conteúdos e etc.*/
+.sectionHeader {
+    display: block;
+    border: 2px solid rgba(164, 61, 61, 0);
 }
 
 
+.tabelaPeriodica {
+    background-color: #3D3D6D;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+}
+
+.tabelaPeriodica img {
+    max-width: 100%;
+    width: auto;
+    max-height: 100%;
+    height: auto;
+}
+
+.formulario {
+    text-align: center;
+    justify-content: center;
+}
+
+.eqForm label {
+    display: block;
+    margin: 0 auto 8px auto;
+    text-align: center;
+}
+
+
+
+h1,
+h2,
+h3 {
+    margin: auto;
+}
 
 /*tamanho das fontes*/
 
@@ -61,6 +74,11 @@ h1 {
     font-size: 48px;
 }
 
+h2,
+h3 {
+    font-size: 30px;
+}
+
 /*cores*/
 h1 {
     color: #15B561;
@@ -70,6 +88,10 @@ h1 {
 h2 {
     color: #FFFD86;
 
+}
+
+h3 {
+    color: #15B561;
 }
 
 .pPeriodica {

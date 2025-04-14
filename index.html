@@ -15,20 +15,21 @@
 <body>
     <header>
         <section class="sectionHeader">
-        <h1>Bem-vindo ao site de Estequiometria!</h1>
-        <p>O intuito deste site é ajudar os estudantes a realizarem ou <br>verificarem equações de elementos da tabela
-            periódica.</p>
-        
-        <nav>
-            <ul>
-                <li><a href="#tabPeriodica">Como funciona a tabela periódica?</a></li>
-                <li><a href="#equacaoFormulario">Monte sua equação</a></li>
-                <li><a href="#contato">Contato</a></li>
-            </ul>
-        </nav>
-    </section>
+            <h1>Bem-vindo ao site de Estequiometria!</h1>
+            <p>O intuito deste site é ajudar os estudantes a realizarem ou <br>verificarem equações de elementos da
+                tabela
+                periódica.</p>
+
+            <nav>
+                <ul>
+                    <li><a href="#tabPeriodica">Como funciona a tabela periódica?</a></li>
+                    <li><a href="#equacaoFormulario">Monte sua equação</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+        </section>
         <figure class="imageHeader">
-            <img class="chemistryImg" src="assets/chemistry 1.svg" alt="chemistry1.svg">
+            <img src="assets/chemistry 1.svg" alt="chemistry1.svg">
         </figure>
     </header>
 
@@ -48,11 +49,14 @@
     </section>
     <section class="formulario">
         <form class="eqForm" id="equacaoFormulario">
+            <h3>Cálculo estequiométrico</h3>
             <p>
-                <label for="equacao">Digite a equação química:</label>
+                <label for="equacao">Digite aqui sua equação. Caso necessite de explicações, abaixo terá um guia passo a
+                    passo.</label>
                 <input type="text" id="equacao" name="equacao" placeholder="Exemplo: H2 + O2 -> H2O">
+
+                <input type="submit" value="Enviar">
             </p>
-            <input type="submit" value="Enviar">
             <p id="resultado"></p>
         </form>
     </section>
