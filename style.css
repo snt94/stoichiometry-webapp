@@ -7,27 +7,59 @@
 
 body {
     padding: 0;
-    margin: 0px;
-    
+    margin: 0;
     background-color: #111D13;
 }
+
 header {
+    display: contents;
+    position: relative;
+    padding: 0;
+    margin: 0;
     background-color: #111D13;
 }
 
 /*Configurações gerais de Margem, Padding, Display, Justificar conteúdos e etc.*/
-.sectionHeader {
-    display: block;
-    border: 2px solid rgba(164, 61, 61, 0);
+/* header h1 {
+    margin: 0;
+    padding: 0;
 }
 
+header figure {
+    padding: 0;
+    margin: 0;
+}
+*/
+.navAndImage {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding-left: 5rem;
+    
+}
+
+nav {
+    flex: 1;
+}
+
+.imageHeader {
+    flex: 1;
+    text-align: right;
+}
+
+.imageHeader img {
+    max-width: 100%;
+    height: auto;
+}
 
 .tabelaPeriodica {
     background-color: #3D3D6D;
-    display: inline-block;
+    display: block;
     justify-content: center;
     text-align: center;
     width: 100%;
+    padding: 1rem 0;
 }
 
 .tabelaPeriodica img {
@@ -46,14 +78,6 @@ header {
     display: block;
     margin: 0 auto 8px auto;
     text-align: center;
-}
-
-
-
-h1,
-h2,
-h3 {
-    margin: auto;
 }
 
 /*tamanho das fontes*/
@@ -100,7 +124,7 @@ h3 {
 
 li {
     text-decoration: none;
-    list-style: none;
+    
 }
 
 p,
@@ -115,4 +139,34 @@ a {
 
 a:hover {
     color: #A1CCA5;
+}
+
+/*Responsividade*/
+
+@media (max-width: 600px) {
+    .imageHeader {
+        display: none;
+    }
+
+    .tabelaPeriodica img {
+        display: none;
+    }
+
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    nav ul {
+        padding: 0;
+        font-size: 0.9rem;
+    }
+
+    
+    /* Exemplo: forçar elementos com overflow pra quebrar em linha */
+    body, html {
+        overflow-x: hidden;
+    }
 }
