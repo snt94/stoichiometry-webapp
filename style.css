@@ -35,8 +35,7 @@ header figure {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    padding-left: 5rem;
-    
+    padding-left: 3rem;
 }
 
 nav {
@@ -151,11 +150,15 @@ a:hover {
     .tabelaPeriodica img {
         display: none;
     }
-
+    .navAndImage {
+        padding: 0;
+        font-size: 1.2rem;
+    }
 }
 
 @media (max-width: 320px) {
     h1 {
+        padding: 5px;
         font-size: 1.2rem;
     }
 
