@@ -154,6 +154,10 @@ a:hover {
         padding: 0;
         font-size: 1.2rem;
     }
+    header {
+        text-align: center;
+        justify-content: center;
+    }
 }
 
 @media (max-width: 320px) {
@@ -167,6 +171,7 @@ a:hover {
         font-size: 0.9rem;
     }
 
+    
     
     /* Exemplo: forçar elementos com overflow pra quebrar em linha */
     body, html {
